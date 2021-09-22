@@ -6,10 +6,10 @@ function Detail() {
   return (
     <Container>
       <Background>
-        <img src="https://i.pinimg.com/originals/3f/81/0b/3f810b1005ca9177f479f51334f31cbe.jpg" />
+        <img src="https://i.pinimg.com/originals/c9/03/70/c90370d1b0be99b2b00058983564f4cc.jpg" />
       </Background>
       <ImageTitle>
-        <img src="http://assets.stickpng.com/thumbs/5c80f70f72f5d9028c17ed26.png" />
+        <img src="https://i.pinimg.com/originals/eb/a7/23/eba7239c665aae1b3a302b5b42479a60.png" />
       </ImageTitle>
       <Controls>
         <PlayButon>
@@ -20,9 +20,15 @@ function Detail() {
           <img src="./images/play-icon-white.png" />
           <span>TRAILER</span>
         </TrailerButton>
-        <AddButton></AddButton>
-        <GroupWatchButton></GroupWatchButton>
+        <AddButton>
+          <span>+</span>
+        </AddButton>
+        <GroupWatchButton>
+          <img src="./images/group-icon.png" />
+        </GroupWatchButton>
       </Controls>
+      <SubTitle>2018 - 24m - fantasy, family, animation</SubTitle>
+      <Description>Adventure of Fin and Jay</Description>
     </Container>
   );
 }
@@ -66,6 +72,7 @@ const ImageTitle = styled.div`
 
 const Controls = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 const PlayButon = styled.button`
@@ -76,7 +83,7 @@ const PlayButon = styled.button`
   display: flex;
   align-items: center;
   height: 56px;
-  background: rbg(249, 249, 249);
+  background: rgb(249, 249, 249);
   border: none;
   cursor: pointer;
   letter-spacing: 1.8px;
@@ -90,8 +97,49 @@ const PlayButon = styled.button`
   }
 `;
 
-const TrailerButton = styled.button``;
+const TrailerButton = styled(PlayButon)`
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgb(249, 249, 249);
 
-const AddButton = styled.button``;
+  span {
+    color: rgb(249, 249, 249);
+    text-transform: uppercase;
+  }
+`;
 
-const GroupWatchButton = styled.button``;
+const AddButton = styled.button`
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 15px;
+  span {
+    font-size: 30px;
+    color: white;
+  }
+`;
+
+const GroupWatchButton = styled(AddButton)`
+  img {
+    opacity: 0.9;
+  }
+`;
+
+const SubTitle = styled.div`
+  color: rgb(249, 249, 249);
+  min-height: 20px;
+  margin-top: 26px;
+  font-size: 15px;
+`;
+
+const Description = styled.div`
+  line-height: 1.4;
+  color: rgb(249, 249, 249);
+  font-size: 20px;
+  margin-top: 16px;
+`;
