@@ -44,13 +44,14 @@ const Nav = styled.nav`
   height: 70px;
   background-color: #090b13;
   display: flex;
-
+  overflow-x: hidden;
   align-items: center;
   padding: 0 36px;
 `;
 
 const Logo = styled.img`
   width: 80px;
+  cursor: pointer;
 `;
 
 const NavMenu = styled.div`
