@@ -1,10 +1,21 @@
-import React from "react";
+/* eslint-disable no-unused-vars */
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import ImgSlider from "./ImgSlider";
 import Movies from "./Movies";
 import Viewers from "./Viewers";
-
+import db from "../firebase";
+import * as firebase from "firebase";
 function Home() {
+  useEffect(() => {
+    db.collection("movies").onSnapshot((snapshot) => {
+      let tempMovies = snapshot.docs.map((doc) => {
+        console.log(doc.data());
+        return { id: doc.id, ...doc.data() };
+      });
+    });
+  }, []);
+
   return (
     <Container>
       <ImgSlider />
